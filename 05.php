@@ -106,7 +106,7 @@
 
     $newGame = new TicTacToe();
 
-    function redrawABoard($newGame) {
+    function redrawBoard($newGame) {
         $isInProgress = true;
         while($isInProgress){
             $currentPlayer = $newGame->decideWhichPlayersTurn();
@@ -128,4 +128,4 @@
         }
     }
 
-    redrawABoard($newGame);
+    redrawBoard($newGame);
