@@ -1,11 +1,11 @@
 <?php
 
     class Hangman {
-        public $words = ['hangman', 'purgatory', 'magnetar', 'troposphere', 'programming'];
-        public $wordIntoArray = [];
-        public $hiddenWord = [];
-        public $misses = [];
-        public $lives = 5;
+        public array $words = ['hangman', 'purgatory', 'magnetar', 'troposphere', 'programming'];
+        public array $wordIntoArray = [];
+        public array $hiddenWord = [];
+        public array $misses = [];
+        public int $lives = 5;
 
         function chooseWord() {
             $this->wordIntoArray = str_split($this->words[rand(0, count($this->words)-1)]);

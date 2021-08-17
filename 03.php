@@ -24,7 +24,7 @@
     function searchForANumber(int $search, array $numbers): string {
         foreach($numbers as $number){
             if($number === $search) {
-                return "The array contains number {$search}";
+                return "The array contains number $search";
             }
         }
         return "The array doesn't have a number you were looking for";

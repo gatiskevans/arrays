@@ -2,13 +2,13 @@
 
     class TicTacToe {
 
-        public $gameCoordinates = [
+        public array $gameCoordinates = [
             [" ", " ", " "],
             [" ", " ", " "],
             [" ", " ", " "]
         ];
 
-        public $emptyStrings = 0;
+        public int $emptyStrings = 0;
 
         function display_board()
         {
@@ -48,10 +48,10 @@
             $isPromptActive = true;
             while($isPromptActive) {
                 if(!is_numeric($row)){
-                    echo "Column {$col}\n";
+                    echo "Column $col\n";
                     $row = readline("The value must be a number. Try again (row): ");
                 } else if(!is_numeric($col)){
-                    echo "Row {$row}\n";
+                    echo "Row $row\n";
                     $col = readline("The value must be a number. Try again (column): ");
                 } else if($row > 2 || $row < 0){
                     $row = readline("The value must be between 0-2. Try again (row): ");
@@ -110,7 +110,7 @@
         $isInProgress = true;
         while($isInProgress){
             $currentPlayer = $newGame->decideWhichPlayersTurn();
-            echo "\nIt's {$currentPlayer}'s turn:\n\n";
+            echo "\nIt's $currentPlayer's turn:\n\n";
             $newGame->display_board();
 
             if($newGame->isTie()){
@@ -121,7 +121,7 @@
             $newGame->makeAMove();
 
             if($newGame->findWinner() !== " "){
-                echo "\nCongratulations {$currentPlayer} won!\n\n";
+                echo "\nCongratulations $currentPlayer won!\n\n";
                 $newGame->display_board();
                 $isInProgress = false;
             }

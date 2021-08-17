@@ -24,12 +24,12 @@
     $arrayTwoDisplay = "Array 2: ";
 
     foreach ($arrayOne as $value){
-        $arrayOneDisplay .= "{$value} ";
+        $arrayOneDisplay .= "$value ";
     }
 
     foreach ($arrayTwo as $value){
-        $arrayTwoDisplay .= "{$value} ";
+        $arrayTwoDisplay .= "$value ";
     }
 
-    echo "{$arrayOneDisplay}\n";
+    echo "$arrayOneDisplay\n";
     echo $arrayTwoDisplay;

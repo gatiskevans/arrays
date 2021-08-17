@@ -8,19 +8,19 @@
 
     //todo
     $originalNumbers = implode(", ", $numbers);
-    echo "Original numeric array: {$originalNumbers}\n";
+    echo "Original numeric array: $originalNumbers\n";
 
     //todo
     sort($numbers);
     $sorted = '';
     for($i = 0; $i < count($numbers); $i++){
         if($i === count($numbers)-1){
-            $sorted .= "{$numbers[$i]}";
+            $sorted .= "$numbers[$i]";
         } else {
-            $sorted .= "{$numbers[$i]}, ";
+            $sorted .= "$numbers[$i], ";
         }
     }
-    echo "Sorted numeric array: {$sorted}\n";
+    echo "Sorted numeric array: $sorted\n";
 
     $words = [
         "Java",
@@ -33,16 +33,16 @@
 
     //todo
     $originalWords = implode(", ", $words);
-    echo "Original string array: {$originalWords}\n";
+    echo "Original string array: $originalWords\n";
 
     //todo
     sort($words);
     $sortedWords = '';
     for($i = 0; $i < count($words); $i++){
         if($i === count($words)-1){
-            $sortedWords .= "{$words[$i]}";
+            $sortedWords .= "$words[$i]";
         } else {
-            $sortedWords .= "{$words[$i]}, ";
+            $sortedWords .= "$words[$i], ";
         }
     }
-    echo "Sorted string array: {$sortedWords}";
+    echo "Sorted string array: $sortedWords";
