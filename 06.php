@@ -22,7 +22,7 @@
         function checkChosenLetter(string $input){
             foreach($this->wordIntoArray as $index => $letter){
                 if($letter === strtolower($input) && $this->hiddenWord[$index] === "_"){
-                    $this->hiddenWord[$index] = $letter . "";
+                    $this->hiddenWord[$index] = $letter;
                 }
             }
             if(!in_array(strtolower($input), $this->wordIntoArray)){
