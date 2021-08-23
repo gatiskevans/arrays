@@ -1,21 +1,11 @@
 <?php
 
-    $arrayOne = [
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100),
-        rand(1, 100)
-    ];
+    $arrayOne = [];
+    for($i = 0; $i < 10; $i++){
+        $arrayOne[] = rand(1, 10);
+    }
 
-    $arrayTwo = array_map(function ($element){
-        return $element;
-        }, $arrayOne);
+    $arrayTwo = $arrayOne;
 
     array_pop($arrayOne);
     array_push($arrayOne, -7);
