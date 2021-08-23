@@ -44,10 +44,10 @@
         function restartGame(){
             $isPromptActive = true;
             while($isPromptActive){
-                $option = readline("Play \"again\"? (Y/N) ");
+                $option = readline("Play again? (Y/N) ");
 
                 while(strlen($option) > 1){
-                    $option = readline("Play \"again\"? (Y/N) ");
+                    $option = readline("Play again? (Y/N) ");
                 }
 
                 if(strtoupper($option) === "N"){
