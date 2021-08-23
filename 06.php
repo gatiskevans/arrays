@@ -79,7 +79,7 @@
 
         $input = readline("Guess: ");
         while(strlen($input) > 1 || is_numeric($input)){
-            $input = readline("Try again: ");
+            $input = readline("Invalid input. Try again: ");
         }
 
         $newGame->checkChosenLetter($input);
