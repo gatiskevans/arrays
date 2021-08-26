@@ -56,10 +56,6 @@
             while($isPromptActive){
                 $option = readline("Play again? (Y/N) ");
 
-                while(strlen($option) > 1){
-                    $option = readline("Play again? (Y/N) ");
-                }
-
                 if(strtoupper($option) === "N"){
                     die("Bye");
                 } else if(strtoupper($option) === "Y") {
