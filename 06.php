@@ -7,7 +7,7 @@
         private array $misses = [];
         private int $lives = 5;
 
-        function chooseWord() {
+        function chooseWord(): void {
             $this->chosenWord = str_split($this->words[array_rand($this->words)]);
         }
 
@@ -23,13 +23,13 @@
             return $this->misses;
         }
 
-        function createHiddenField() {
+        function createHiddenField(): void {
             for($i = 0; $i < count($this->chosenWord); $i++){
                 array_push($this->hiddenWord, "_");
             }
         }
 
-        function checkChosenLetter(string $input){
+        function checkChosenLetter(string $input): void {
             foreach($this->chosenWord as $index => $letter){
                 if($letter === strtolower($input) && $this->hiddenWord[$index] === "_"){
                     $this->hiddenWord[$index] = $letter;
@@ -51,7 +51,7 @@
             return $this->lives === 0;
         }
 
-        function restartGame(){
+        function restartGame(): void{
             $isPromptActive = true;
             while($isPromptActive){
                 $option = readline("Play again? (Y/N) ");
