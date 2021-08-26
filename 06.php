@@ -1,14 +1,26 @@
 <?php
 
     class Hangman {
-        public array $words = ['hangman', 'purgatory', 'magnetar', 'troposphere', 'programming'];
-        public array $chosenWord = [];
-        public array $hiddenWord = [];
-        public array $misses = [];
-        public int $lives = 5;
+        private array $words = ['hangman', 'purgatory', 'magnetar', 'troposphere', 'programming'];
+        private array $chosenWord = [];
+        private array $hiddenWord = [];
+        private array $misses = [];
+        private int $lives = 5;
 
         function chooseWord() {
             $this->chosenWord = str_split($this->words[rand(0, count($this->words)-1)]);
+        }
+
+        function getLives(): int {
+            return $this->lives;
+        }
+
+        function getHiddenWord(): array {
+            return $this->hiddenWord;
+        }
+
+        function getMisses(): array {
+            return $this->misses;
         }
 
         function createHiddenField() {
@@ -71,9 +83,9 @@
 
     while(true){
         echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-";
-        echo "\nYou have $newGame->lives lives left\n";
-        echo "\nWord: " . implode(" ", $newGame->hiddenWord) . "\n\n";
-        echo "Misses: " . implode("", $newGame->misses) . "\n\n";
+        echo "\nYou have {$newGame->getLives()} lives left\n";
+        echo "\nWord: " . implode(" ", $newGame->getHiddenWord()) . "\n\n";
+        echo "Misses: " . implode("", $newGame->getMisses()) . "\n\n";
 
         if($newGame->win()){
             echo "Congratulations! You have won\n";
