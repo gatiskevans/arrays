@@ -8,7 +8,7 @@
         private int $lives = 5;
 
         function chooseWord() {
-            $this->chosenWord = str_split($this->words[rand(0, count($this->words)-1)]);
+            $this->chosenWord = str_split($this->words[array_rand($this->words)]);
         }
 
         function getLives(): int {
@@ -24,11 +24,9 @@
         }
 
         function createHiddenField() {
-            $emptyFields = [];
             for($i = 0; $i < count($this->chosenWord); $i++){
-                array_push($emptyFields, "_");
+                array_push($this->hiddenWord, "_");
             }
-            $this->hiddenWord = $emptyFields;
         }
 
         function checkChosenLetter(string $input){
